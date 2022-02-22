@@ -1,6 +1,8 @@
 from sqlite3 import Timestamp
 from typing import Any
 from serial import Serial
+import time
+from pandas import *
 
 # TODO Logging of instrument registers using logstart/logget
 # TODO Figure out a better way to remove \r\n\x03 when converting to string
@@ -102,11 +104,88 @@ assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "ON"
 # Getting outputs
 
 print( instr.register_read("SY3PL50M", 32, "State"))
+
+time.sleep(10)
 # print(instr.timestamp())
 # print(instr.connect())
 # print(instr.register_list())
 
-import time
+def polarization(pol):
+    if pol == "ppp":
+        instr.register_write("SM5-SF", 57, "Target position", "54700.000000")
+        instr.register_write("SM5-HW2", 59, "Target position", "20000.000000")
+        time.sleep(5)
+        instr.register_write("SM5-V", 58, "Target position", "11200.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+        instr.register_write("SM5-M4", 50, "Target position", "-12000.000000")
+        instr.register_write("SM5-M6", 51, "Target position", "42000.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+    if pol == "ssp":    
+        instr.register_write("SM5-SF", 57, "Target position", "111500.000000")
+        instr.register_write("SM5-HW2", 59, "Target position", "50000.000000")
+        time.sleep(5)
+        instr.register_write("SM5-V", 58, "Target position", "40000.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+        instr.register_write("SM5-M4", 50, "Target position", "-12000.000000")
+        instr.register_write("SM5-M6", 51, "Target position", "42000.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+    if pol == "sps": 
+        instr.register_write("SM5-SF", 57, "Target position", "111500.000000")
+        instr.register_write("SM5-HW2", 59, "Target position", "50000.000000")
+        time.sleep(5)
+        instr.register_write("SM5-V", 58, "Target position", "11200.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+        instr.register_write("SM5-M4", 50, "Target position", "-120000.000000")
+        instr.register_write("SM5-M6", 51, "Target position", "113500.000000")
+        instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+        time.sleep(5)
+
+# Set PMT sensitivity
+
+instr.register_write("PMTC0000", 1, "Set PMT cathode voltage", "500.000000")
+
+######## Set SFG polarization ########   -- to S
+
+instr.register_write("SM5-SF", 57, "Target position", "111500.000000")
+instr.register_write("SM5-HW2", 59, "Target position", "50000.000000")
+time.sleep(5)
+
+######## Set SFG polarization ########   -- to P  
+
+instr.register_write("SM5-SF", 57, "Target position", "54700.000000")
+instr.register_write("SM5-HW2", 59, "Target position", "20000.000000")
+time.sleep(5)
+
+
+######## Set VIS polarization ######## -- to P
+
+instr.register_write("SM5-V", 58, "Target position", "11200.000000")
+instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+time.sleep(5)
+
+######## Set VIS polarization ######## -- to S
+
+instr.register_write("SM5-V", 58, "Target position", "40000.000000")
+instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+time.sleep(5)
+
+######## Set IR polarization ######## -- to S
+
+instr.register_write("SM5-M4", 50, "Target position", "-120000.000000")
+instr.register_write("SM5-M6", 51, "Target position", "113500.000000")
+instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
+time.sleep(5)
+
+######## Set IR polarization ######## -- to P 
+
+instr.register_write("SM5-M4", 50, "Target position", "-12000.000000")
+instr.register_write("SM5-M6", 51, "Target position", "42000.000000")
+instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
 time.sleep(5)
 
 # Turning laser off
@@ -120,10 +199,3 @@ assert instr.register_read("SY3PL50M", 32, "Energy level") == "OFF"
 assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "OFF"
 
 instr.disconnect()
-
-# CheckPolarizationSelector.vi/SetSFGPolarization
-
-
-
-
-
