@@ -1,12 +1,14 @@
+from multiprocessing.sharedctypes import Value
 from sqlite3 import Timestamp
 from typing import Any
 from serial import Serial
 import time
-from pandas import *
 
 # TODO Logging of instrument registers using logstart/logget
 # TODO Figure out a better way to remove \r\n\x03 when converting to string
 # TODO Look into always flushing buffer and drop the flush calls
+# TODO Refactor the code and remove needless duplication
+# TODO Dynamic conversion from/to string based on types and metdata from instrument
 
 class Instrument:
     def __init__(self, serial_port: str = "COM3"):
@@ -39,11 +41,10 @@ class Instrument:
         if not self._ser.is_open:
          raise Exception("connect to the instrument first")
 
-        self._ser.write(b"/timestamp\r")
+        self._ser.write(b"/timestamp()\r")
         self._ser.flush()
         return self._ser.read_until(b"\x03")[:-3].decode('latin-1')
 
-# '''Error: (-1) 2nd and 3rd arguments are missing (/timestamp/???/???)
 ###########################################################################
 
     def register_list(self):
@@ -83,34 +84,80 @@ class Instrument:
             # TODO Better formatting
             raise Exception(msg[3:-3].decode("latin-1"))
 
+    def start_logging(self, module_name: str, id: int, register_name: str, buffer_size: int):
+        if buffer_size <= 0:
+            raise ValueError("buffer size must be at least 1 byte")
 
-instr = Instrument()
-instr.connect()
+        if not self._ser.is_open:
+            raise Exception("connect to the instrument first")
 
-# print(instr.device_id())
-print(instr.device_id())
+        cmd = f'/{module_name}/{id}/{register_name}/logstart()/{buffer_size}\r'
+        self._ser.write(cmd.encode())
+        self._ser.flush()
 
-# Turning laser on
-instr.register_write("SY3PL50M", 32, "State", "ON")
-instr.register_write("SY3PL50M", 32, "Energy level", "Maximum")
-instr.register_write("PMTC0000", 1, "PMT HV power supply", "ON")
-# instr.register_write("SY3PL50M", 32, "Start->Lasing delay", "5")
+        if (msg := self._ser.read_until(b'\x03')) != b"\r\n\x03":
+            # TODO Better formatting
+            raise Exception(msg[3:-3].decode("latin-1"))
 
-# Just reading the values for tests
-assert instr.register_read("SY3PL50M", 32, "State") == "ON"
-assert instr.register_read("SY3PL50M", 32, "Energy level") == "Maximum"
-assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "ON"
+    def stop_logging(self, module_name: str, id: int, register_name: str):
+        if not self._ser.is_open:
+            raise Exception("connect to the instrument first")
 
-# Getting outputs
+        cmd = f'/{module_name}/{id}/{register_name}/logstart()/0\r'
+        self._ser.write(cmd.encode())
+        self._ser.flush()
 
-print( instr.register_read("SY3PL50M", 32, "State"))
+        if (msg := self._ser.read_until(b'\x03')) != b"\r\n\x03":
+            # TODO Better formatting
+            raise Exception(msg[3:-3].decode("latin-1"))
 
-time.sleep(10)
-# print(instr.timestamp())
-# print(instr.connect())
-# print(instr.register_list())
+    # TODO Consider streaming data as it is read (usage of generators...)
+    # TODO Find a better name
+    def logget(self, module_name: str, id: int, register_name: str, num_recs: int):
+        if num_recs < 0: # TODO Is 0 a valid value?
+            raise ValueError("number of records must be positive")
+        
+        if not self._ser.is_open:
+            raise Exception("connect to the instrument first")
 
-def polarization(pol):
+        cmd = f'/{module_name}/{id}/{register_name}/logget()/{num_recs}\r'
+        self._ser.write(cmd.encode())
+        self._ser.flush()
+
+        # TODO Timestamp should be an int
+        # FIXME Peak the message for ''' and raise exception
+        # FIXME Deal with errors that can show up later like FIFO overrun
+        data = self._ser.read_until(b'\x03').decode('latin-1')
+        return list(map(lambda x: x.rsplit(maxsplit=1), data.split('\r\n')))
+
+def detectorSensitivity(instr, val): # 1-99
+    instr.register_write("PMTC0000", 1, "Set PMT cathode voltage", f"{val}0.000000")
+
+def LaserOn(instr, val):
+    # Turning laser on
+
+    if val == 'TRUE':
+        instr.register_write("SY3PL50M", 32, "State", "ON")
+        instr.register_write("SY3PL50M", 32, "Energy level", "Maximum")
+        instr.register_write("PMTC0000", 1, "PMT HV power supply", "ON")
+        # instr.register_write("SY3PL50M", 32, "Start->Lasing delay", "5")
+
+        # Just reading the values for tests
+        assert instr.register_read("SY3PL50M", 32, "State") == "ON"
+        assert instr.register_read("SY3PL50M", 32, "Energy level") == "Maximum"
+        assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "ON"
+    if val == 'FALSE':
+    # Turning laser off
+        instr.register_write("PMTC0000", 1, "PMT HV power supply", "OFF")
+        instr.register_write("SY3PL50M", 32, "Energy level", "OFF")
+        instr.register_write("SY3PL50M", 32, "State", "OFF")
+
+        # Just reading the values for tests
+        assert instr.register_read("SY3PL50M", 32, "State") == "OFF"
+        assert instr.register_read("SY3PL50M", 32, "Energy level") == "OFF"
+        assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "OFF"
+
+def polarization(instr, pol):
     if pol == "ppp":
         instr.register_write("SM5-SF", 57, "Target position", "54700.000000")
         instr.register_write("SM5-HW2", 59, "Target position", "20000.000000")
@@ -144,58 +191,3 @@ def polarization(pol):
         instr.register_write("SM5-M6", 51, "Target position", "113500.000000")
         instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
         time.sleep(5)
-
-# Set PMT sensitivity
-
-instr.register_write("PMTC0000", 1, "Set PMT cathode voltage", "500.000000")
-
-######## Set SFG polarization ########   -- to S
-
-instr.register_write("SM5-SF", 57, "Target position", "111500.000000")
-instr.register_write("SM5-HW2", 59, "Target position", "50000.000000")
-time.sleep(5)
-
-######## Set SFG polarization ########   -- to P  
-
-instr.register_write("SM5-SF", 57, "Target position", "54700.000000")
-instr.register_write("SM5-HW2", 59, "Target position", "20000.000000")
-time.sleep(5)
-
-
-######## Set VIS polarization ######## -- to P
-
-instr.register_write("SM5-V", 58, "Target position", "11200.000000")
-instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
-time.sleep(5)
-
-######## Set VIS polarization ######## -- to S
-
-instr.register_write("SM5-V", 58, "Target position", "40000.000000")
-instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
-time.sleep(5)
-
-######## Set IR polarization ######## -- to S
-
-instr.register_write("SM5-M4", 50, "Target position", "-120000.000000")
-instr.register_write("SM5-M6", 51, "Target position", "113500.000000")
-instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
-time.sleep(5)
-
-######## Set IR polarization ######## -- to P 
-
-instr.register_write("SM5-M4", 50, "Target position", "-12000.000000")
-instr.register_write("SM5-M6", 51, "Target position", "42000.000000")
-instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
-time.sleep(5)
-
-# Turning laser off
-instr.register_write("PMTC0000", 1, "PMT HV power supply", "OFF")
-instr.register_write("SY3PL50M", 32, "Energy level", "OFF")
-instr.register_write("SY3PL50M", 32, "State", "OFF")
-
-# Just reading the values for tests
-assert instr.register_read("SY3PL50M", 32, "State") == "OFF"
-assert instr.register_read("SY3PL50M", 32, "Energy level") == "OFF"
-assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "OFF"
-
-instr.disconnect()
