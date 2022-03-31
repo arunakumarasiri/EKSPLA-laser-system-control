@@ -8,7 +8,7 @@ import time
 # TODO Figure out a better way to remove \r\n\x03 when converting to string
 # TODO Look into always flushing buffer and drop the flush calls
 # TODO Refactor the code and remove needless duplication
-# TODO Dynamic conversion from/to string based on types and metdata from instrument
+# TODO Dynamic conversion from/to string based on types and metadata from instrument
 
 class Instrument:
     def __init__(self, serial_port: str = "COM3"):
@@ -130,8 +130,17 @@ class Instrument:
         data = self._ser.read_until(b'\x03').decode('latin-1')
         return list(map(lambda x: x.rsplit(maxsplit=1), data.split('\r\n')))
 
-def detectorSensitivity(instr, val): # 1-99
+def setdetectorSensitivity(instr, val): # 1-99
+
     instr.register_write("PMTC0000", 1, "Set PMT cathode voltage", f"{val}0.000000")
+
+def setVisTransmission(instr, val): # 1-99
+    
+    instr.register_write("SM5-HM1", 46, "Target position", f"{val}.000000")
+
+def setAmplification(instr, val): # 1-99
+    
+    instr.register_write("SY3PL50M", 32, "Amplification", f"{val}.000000")
 
 def LaserOn(instr, val):
     # Turning laser on
@@ -157,7 +166,7 @@ def LaserOn(instr, val):
         assert instr.register_read("SY3PL50M", 32, "Energy level") == "OFF"
         assert instr.register_read("PMTC0000", 1, "PMT HV power supply") == "OFF"
 
-def polarization(instr, pol):
+def setpolarization(instr, pol):
     if pol == "ppp":
         instr.register_write("SM5-SF", 57, "Target position", "54700.000000")
         instr.register_write("SM5-HW2", 59, "Target position", "20000.000000")
@@ -191,3 +200,7 @@ def polarization(instr, pol):
         instr.register_write("SM5-M6", 51, "Target position", "113500.000000")
         instr.register_write("SM5-HM2", 47, "Target position", "-31.000000E+3")
         time.sleep(5)
+
+def motorcheck(instr, val): # 1-99
+    
+    instr.register_write("SM5-7", 12, "Target position", f"{val}.000000")

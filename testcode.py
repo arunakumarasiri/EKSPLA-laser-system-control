@@ -15,18 +15,37 @@ print(instr.register_read("SY3PL50M", 32, "State"))
 
 time.sleep(10)
 
-LaserOn(instr, 'TRUE')
-detectorSensitivity(instr, 50)
-polarization(instr, "ssp")
-LaserOn(instr, 'FALSE')
+LaserOn(instr,'TRUE')
 
-print(instr.register_read("SY3PL50M", 32, "State"))
+# setdetectorSensitivity(instr, 50)
+# setAmplification(instr, 50)
+# setVisTransmission(instr, 70)
+# setpolarization(instr, "ssp")
 
-print(instr.logget("PMTC0000", 1, "Data", 5))
+
+print(instr.logget("PMTC0000", 1, "Data", 10))
 print(instr.logget("PHD1K000", 3, "Data", 5))
 print(instr.logget("PHD1K000", 5, "Data", 5))
 print(instr.logget("PHD1K000", 48, "Mean", 5))
 print(instr.logget("MaxiOPG", 31, "OPO", 5))
 print(instr.logget("MaxiOPG", 31, "AgGaS2", 5))
+
+motorcheck(instr, 54700)
+
+LaserOn(instr,'FALSE')
+
+
+print(instr.register_read("SY3PL50M", 32, "State"))
+
+# First trial
+
+# print(instr.logget("PMTC0000", 1, "Data", 5))
+# print(instr.logget("PHD1K000", 3, "Data", 5))
+# print(instr.logget("PHD1K000", 5, "Data", 5))
+# print(instr.logget("PHD1K000", 48, "Mean", 5))
+# print(instr.logget("MaxiOPG", 31, "OPO", 5))
+# print(instr.logget("MaxiOPG", 31, "AgGaS2", 5))
+
+
 
 instr.disconnect()
