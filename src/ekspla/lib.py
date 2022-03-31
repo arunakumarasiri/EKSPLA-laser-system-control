@@ -1,5 +1,6 @@
 from ctypes import POINTER, WinDLL, c_char_p, c_double, c_int
-from os import add_dll_directory, path
+from os import add_dll_directory
+from pathlib import Path
 
 from .errors import errcheck
 
@@ -9,7 +10,7 @@ c_double_p = POINTER(c_double)
 
 class LibRmtCtrl(WinDLL):
     def __init__(self, name: str = "remotecontrol"):
-        vendor_dir = path.join(path.dirname(__file__), "..", "..", "vendor")
+        vendor_dir = Path(__file__).parents[2] / "vendor"
         with add_dll_directory(vendor_dir):
             super().__init__(name)
 
