@@ -31,6 +31,9 @@ class LibRmtCtrl(WinDLL):
         self.rcIsRegisterNV.argtypes = (c_char_p, c_char_p, c_int_p)
         self.rcGetRegFirstEnumValue.argtypes = (c_char_p, c_char_p, c_char_p, c_int)
         self.rcGetRegNextEnumValue.argtypes = (c_char_p, c_char_p, c_char_p, c_int)
+        self.rcGetRegMinVal.argtypes = (c_char_p, c_char_p, c_double_p)
+        self.rcGetRegMaxVal.argtypes = (c_char_p, c_char_p, c_double_p)
+        self.rcGetRegFmtString.argtypes = (c_char_p, c_char_p, c_char_p, c_int)
 
         # Register access
         self.rcGetRegAsDouble.argtypes = (c_char_p, c_char_p, c_double_p, c_int, c_int_p)
