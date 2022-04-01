@@ -1,5 +1,7 @@
-__pycache__/
+*.egg-info/
 .vscode/
+__pycache__/
+dist/
 
 # Vendor
 CANRS232.ini
