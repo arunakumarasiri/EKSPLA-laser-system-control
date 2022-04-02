@@ -1,5 +1,4 @@
 from ctypes import POINTER, WinDLL, c_char_p, c_double, c_int
-from os import add_dll_directory
 from pathlib import Path
 
 from .errors import errcheck
@@ -9,10 +8,14 @@ c_double_p = POINTER(c_double)
 
 
 class LibRmtCtrl(WinDLL):
-    def __init__(self, name: str = "remotecontrol"):
+    def __init__(self):
         vendor_dir = Path(__file__).parents[2] / "vendor"
-        with add_dll_directory(vendor_dir):
-            super().__init__(name)
+        super().__init__(str(vendor_dir / "remotecontrol.dll"))
+
+        # CAN drivers are loaded dynamically
+        for driver in ["usbcand", "canrs232", "cantcp"]:
+            if not (driver_path := vendor_dir / f"{driver}.dll").exists():
+                raise FileNotFoundError(f"Could not find module '{driver_path}'")
 
         """ Argument types """
         # fmt: off
