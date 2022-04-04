@@ -1,7 +1,6 @@
 # EKSPLA Remote Control
 
 Python wrapper around EKSPLA's `REMOTECONTROL.dll`.
-Requires a 32-bit version of Python because of the underlying DLLs.
 
 ## Build
 
@@ -24,3 +23,11 @@ For development purposes, you can locally install the package using:
 ```sh
 pip install --editable .
 ```
+
+## Usage
+
+Please refer to the [examples directory](examples/) for examples on how to use.
+
+The library requires `REMOTECONTROL.csv` to be present in the current working directory.
+
+Note that a 32-bit version of Python is also required because of the underlying DLLs.
