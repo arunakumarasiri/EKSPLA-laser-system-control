@@ -1,0 +1,738 @@
+Device: PMTC0000   Connection type - First Gray Box  Date: 11/18/2021
+Name;ID;Reg ID;Menu;Type;User rights;Nonvolatile;Min value;Max value;Short name;Print format;Name;Value
+PMTC0000;$1;$FF;$0;;;;;;;;;
+PMTC0000;$1;$10;$0;u16;ArUrSr;;0;1023;Data;%u;Data;0
+PMTC0000;$1;$11;$1;u8;AUS;;0;1;Power;[OFF,ON];PMT HV power supply;OFF
+PMTC0000;$1;$12;$2;u16;AUS;NV;0;1600;SHV;%uV;Set PMT cathode voltage;0
+PMTC0000;$1;$13;$3;u16;ArUrSr;;0;1600;MHV;%uV;Measured PMT cathode voltage;9
+PMTC0000;$1;$14;$4;u16;AUS;NV;1;65535;GWns;%uns;Gate width ns;100
+PMTC0000;$1;$15;$5;u16;AUS;NV;0;6553;GWus;%uus;Gate width us;0
+PMTC0000;$1;$16;$6;u16;AUS;NV;20;5000;Rate;%uHz;Repetition rate;100
+PMTC0000;$1;$17;$7;u8;AUS;NV;0;2;M;[EXT SYNC,CAN SYNC,REPEAT];Sync mode;EXT SYNC
+PMTC0000;$1;$FF;$10;;;;;;Test;;Test;
+PMTC0000;$1;$18;$11;u16;AS;;0;4095;DI;%u;Delay generator current;2581
+PMTC0000;$1;$19;$12;u8;AS;;1;15;KTh;%u;Comparator threshold;8
+PMTC0000;$1;$1A;$13;u16;A;;0;2;SW;[Any,GATE OPENED,GATE CLOSED];SW state;Any
+PMTC0000;$1;$FF;$20;;;;;;;a;Calibrate;
+PMTC0000;$1;$1B;$21;u16;AS;NV;1;65535;MinGWns;%uns;Min gate width ns;50
+PMTC0000;$1;$1C;$22;u16;A;NV;20;65535;MaxGWns;%uns;Max gate width ns;450
+PMTC0000;$1;$1D;$23;u16;A;NV;1;1600;MaxHV;%uV;Max PMT cathode voltage;1250
+PMTC0000;$1;$1E;$24;u16;A;NV;1;4000;CHV;%0.4f;Calibrate HV voltage;0.0312
+PMTC0000;$1;$1F;$25;u16;A;NV;1;2000;CMHV;%1.2f;Calibrate HV meter;16.50
+PMTC0000;$1;$20;$26;s16;A;NV;-1000;1000;Doff;%d;Delay offset;8
+PMTC0000;$1;$21;$27;u16;A;NV;0;100;Cdel;%u;Calibrate delay;8
+PMTC0000;$1;$22;$28;u8;A;NV;0;255;Offset;%u;Calibrate offset;190
+PMTC0000;$1;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware PMT1K12B;210421
+PHD1K000;$3;$FF;$0;;;;;;;;;
+PHD1K000;$3;$18;$0;u16;ArUrSr;;0;65535;Data;%u;Data;0
+PHD1K000;$3;$11;$1;float;ArUrSr;;0;3.40282346638529E38;Mean;%f;Mean;0
+PHD1K000;$3;$12;$2;u16;ArUrSr;;0;10000;StdDev;%.2f%;Standard deviation;0.00
+PHD1K000;$3;$13;$3;float;ArUrSr;;0;3.40282346638529E38;Min;%f;Minimum;0
+PHD1K000;$3;$14;$4;float;ArUrSr;;0;3.40282346638529E38;Max;%f;Maximum;0
+PHD1K000;$3;$15;$5;u16;AUS;NV;1;65535;Batch;%upulses;Batch size;65535
+PHD1K000;$3;$16;$6;u8;AS;NV;0;8;Atten;[/1,/2,/4,/8,/16,/32,/64,/128,/256];Attenuator position;/1
+PHD1K000;$3;$FF;$10;;;;;;;;Acquisition mode;
+PHD1K000;$3;$17;$11;u8;AS;NV;0;2;SyncM;[RISE,FALL,POLL];Sync mode;RISE
+PHD1K000;$3;$FF;$20;;;;;;;;Calibrate;
+PHD1K000;$3;$19;$21;float;AS;NV;1.17549435082229E-38;3.40282346638529E38;Limit;%f;Energy limit;1E009
+PHD1K000;$3;$1A;$25;float;A;NV;1.17549435082229E-38;9.99999968028569E37;CalConst;%f;Calibrate constant;1
+PHD1K000;$3;$1D;$28;u16;A;NV;0;10000;Offset;%u;ADC offset;0
+PHD1K000;$3;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Version PHDMET16;201028
+UCP     ;$4;$FF;$0;;;;;;;;;
+UCP     ;$4;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware UCPv3;151230
+PHD1K000;$5;$FF;$0;;;;;;;;;
+PHD1K000;$5;$18;$0;u16;ArUrSr;;0;65535;Data;%u;Data;0
+PHD1K000;$5;$11;$1;float;ArUrSr;;0;3.40282346638529E38;Mean;%f;Mean;0
+PHD1K000;$5;$12;$2;u16;ArUrSr;;0;10000;StdDev;%.2f%;Standard deviation;0.00
+PHD1K000;$5;$13;$3;float;ArUrSr;;0;3.40282346638529E38;Min;%f;Minimum;0
+PHD1K000;$5;$14;$4;float;ArUrSr;;0;3.40282346638529E38;Max;%f;Maximum;0
+PHD1K000;$5;$15;$5;u16;AUS;NV;1;65535;Batch;%upulses;Batch size;65535
+PHD1K000;$5;$16;$6;u8;AS;NV;0;8;Atten;[/1,/2,/4,/8,/16,/32,/64,/128,/256];Attenuator position;/1
+PHD1K000;$5;$FF;$10;;;;;;;;Acquisition mode;
+PHD1K000;$5;$17;$11;u8;AS;NV;0;2;SyncM;[RISE,FALL,POLL];Sync mode;RISE
+PHD1K000;$5;$FF;$20;;;;;;;;Calibrate;
+PHD1K000;$5;$19;$21;float;AS;NV;1.17549435082229E-38;3.40282346638529E38;Limit;%f;Energy limit;1E009
+PHD1K000;$5;$1A;$25;float;A;NV;1.17549435082229E-38;9.99999968028569E37;CalConst;%f;Calibrate constant;1
+PHD1K000;$5;$1D;$28;u16;A;NV;0;10000;Offset;%u;ADC offset;0
+PHD1K000;$5;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Version PHDMET16;170118
+SM5-1   ;$6;$FF;$0;;;;;;;;;
+SM5-1   ;$6;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-1   ;$6;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-1   ;$6;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-1   ;$6;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-1   ;$6;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-1   ;$6;$FF;$10;;;;;;;;Motor Setup;
+SM5-1   ;$6;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-1   ;$6;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-1   ;$6;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-1   ;$6;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-1   ;$6;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-1   ;$6;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-1   ;$6;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-1   ;$6;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-1   ;$6;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-1   ;$6;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-1   ;$6;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-1   ;$6;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-1   ;$6;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-1   ;$6;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-1   ;$6;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-2   ;$7;$FF;$0;;;;;;;;;
+SM5-2   ;$7;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-2   ;$7;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-2   ;$7;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-2   ;$7;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-2   ;$7;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-2   ;$7;$FF;$10;;;;;;;;Motor Setup;
+SM5-2   ;$7;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-2   ;$7;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-2   ;$7;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-2   ;$7;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-2   ;$7;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-2   ;$7;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-2   ;$7;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-2   ;$7;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-2   ;$7;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-2   ;$7;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-2   ;$7;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-2   ;$7;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-2   ;$7;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-2   ;$7;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-2   ;$7;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-3   ;$8;$FF;$0;;;;;;;;;
+SM5-3   ;$8;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-3   ;$8;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-3   ;$8;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-3   ;$8;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-3   ;$8;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-3   ;$8;$FF;$10;;;;;;;;Motor Setup;
+SM5-3   ;$8;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-3   ;$8;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-3   ;$8;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-3   ;$8;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-3   ;$8;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-3   ;$8;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-3   ;$8;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-3   ;$8;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-3   ;$8;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-3   ;$8;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-3   ;$8;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-3   ;$8;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-3   ;$8;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-3   ;$8;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-3   ;$8;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-4   ;$9;$FF;$0;;;;;;;;;
+SM5-4   ;$9;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-4   ;$9;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-4   ;$9;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-4   ;$9;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-4   ;$9;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-4   ;$9;$FF;$10;;;;;;;;Motor Setup;
+SM5-4   ;$9;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-4   ;$9;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-4   ;$9;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-4   ;$9;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-4   ;$9;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-4   ;$9;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-4   ;$9;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-4   ;$9;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-4   ;$9;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-4   ;$9;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-4   ;$9;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-4   ;$9;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-4   ;$9;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-4   ;$9;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-4   ;$9;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-5   ;$A;$FF;$0;;;;;;;;;
+SM5-5   ;$A;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-5   ;$A;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-5   ;$A;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-5   ;$A;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-5   ;$A;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-5   ;$A;$FF;$10;;;;;;;;Motor Setup;
+SM5-5   ;$A;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-5   ;$A;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-5   ;$A;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-5   ;$A;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-5   ;$A;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-5   ;$A;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-5   ;$A;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-5   ;$A;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-5   ;$A;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-5   ;$A;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-5   ;$A;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-5   ;$A;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-5   ;$A;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-5   ;$A;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-5   ;$A;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-6   ;$B;$FF;$0;;;;;;;;;
+SM5-6   ;$B;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-6   ;$B;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-6   ;$B;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-6   ;$B;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-6   ;$B;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-6   ;$B;$FF;$10;;;;;;;;Motor Setup;
+SM5-6   ;$B;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-6   ;$B;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-6   ;$B;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-6   ;$B;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-6   ;$B;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-6   ;$B;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-6   ;$B;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-6   ;$B;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-6   ;$B;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-6   ;$B;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-6   ;$B;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-6   ;$B;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-6   ;$B;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-6   ;$B;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-6   ;$B;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-7   ;$C;$FF;$0;;;;;;;;;
+SM5-7   ;$C;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-7   ;$C;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-7   ;$C;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-7   ;$C;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-7   ;$C;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-7   ;$C;$FF;$10;;;;;;;;Motor Setup;
+SM5-7   ;$C;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-7   ;$C;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-7   ;$C;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-7   ;$C;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-7   ;$C;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-7   ;$C;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-7   ;$C;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-7   ;$C;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-7   ;$C;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-7   ;$C;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-7   ;$C;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-7   ;$C;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-7   ;$C;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-7   ;$C;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-7   ;$C;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-8   ;$D;$FF;$0;;;;;;;;;
+SM5-8   ;$D;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-8   ;$D;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-8   ;$D;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-8   ;$D;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-8   ;$D;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-8   ;$D;$FF;$10;;;;;;;;Motor Setup;
+SM5-8   ;$D;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-8   ;$D;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-8   ;$D;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-8   ;$D;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-8   ;$D;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-8   ;$D;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-8   ;$D;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-8   ;$D;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-8   ;$D;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-8   ;$D;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-8   ;$D;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-8   ;$D;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-8   ;$D;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-8   ;$D;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-8   ;$D;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-9   ;$E;$FF;$0;;;;;;;;;
+SM5-9   ;$E;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-9   ;$E;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-9   ;$E;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-9   ;$E;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-9   ;$E;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-9   ;$E;$FF;$10;;;;;;;;Motor Setup;
+SM5-9   ;$E;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-9   ;$E;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-9   ;$E;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;1000
+SM5-9   ;$E;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;100
+SM5-9   ;$E;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-9   ;$E;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-9   ;$E;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-9   ;$E;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-9   ;$E;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-9   ;$E;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;DISABLED
+SM5-9   ;$E;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-9   ;$E;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-9   ;$E;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-9   ;$E;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-9   ;$E;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+LDM6A   ;$10;$FF;$0;;;;;;;;;
+LDM6A   ;$10;$10;$0;u8;AUS;NV;0;1;State;[OFF,ON,FAULT];Power;OFF
+LDM6A   ;$10;$11;$1;u8;AUS;;0;1;LDon;[OFF,ON];Diode current ON;ON
+LDM6A   ;$10;$12;$2;u16;AUrS;NV;0;1000;Iset0;%.2fA;Set Current;1.80
+LDM6A   ;$10;$13;$3;u16;ArUrSr;;0;1000;Idisp;%.2fA;Display Current;0.00
+LDM6A   ;$10;$17;$7;u16;ArUrSr;;0;2500;Pi;%.2fW;LD power;0.00
+LDM6A   ;$10;$18;$8;u16;ArUrSr;;0;250;Vld;%.2fV;Voltage on LD;0.00
+LDM6A   ;$10;$19;$9;u8;ArUrSr;;0;3;Fault;[NONE,DRIVER,COOLING,INTERLOCK];Fault source;NONE
+LDM6A   ;$10;$1A;$A;u16;ArUrSr;;0;65535;Fcode;%xHEX;Fault code;0
+LDM6A   ;$10;$1B;$B;u32;AUrS;NV;0;4294967295;Time;%us;Work seconds;372253
+LDM6A   ;$10;$FF;$10;;;;;;;;Setup;
+LDM6A   ;$10;$1D;$12;u16;AUrS;NV;0;1000;Ilim;%.2fA;Set current Limit;5.00
+LDM6A   ;$10;$1F;$14;u8;AUrS;NV;0;1;dI;[SLOW,FAST];Current slew rate;SLOW
+LDM6A   ;$10;$22;$17;u16;ArUrSr;;0;1000;CurLimM;%.2fA;Current limit median;5.20
+LDM6A   ;$10;$24;$19;u16;AUrSr;NV;100;2500;PhdMax;%.2fW;LD power limit;12.50
+LDM6A   ;$10;$2C;$19;u8;AS;NV;0;1;IdispDiv;[6.6A-version,10A-version];Current divider;6.6A-version
+LDM6A   ;$10;$46;$19;u8;AS;NV;4;60;StartUpDelay;%us;Startup delay;5
+LDM6A   ;$10;$1E;$19;u16;AUrS;NV;0;1000;Istart;%.2fA;Set Start Current;0.00
+LDM6A   ;$10;$14;$19;u8;AUrS;NV;0;1;dI0;[OFF,ON];Start Current 1 force fast slew rate;ON
+LDM6A   ;$10;$15;$19;u16;AUrS;NV;0;1200;Istart1T;%.1fs;Start Current 1 state time;0.0
+LDM6A   ;$10;$16;$19;u16;AUrS;NV;0;1000;Istart2;%.2fA;Set Start Current 2;0.00
+LDM6A   ;$10;$1C;$19;u16;AUrS;NV;0;1200;Istart2T;%.1fs;Start Current 2 state time;0.0
+LDM6A   ;$10;$FF;$20;;;;;;;;Interlocks;
+LDM6A   ;$10;$26;$21;u8;AUrS;NV;0;1;IntlES;[ON,Defeat];External interlock on/off;ON
+LDM6A   ;$10;$27;$22;u8;AUrS;NV;0;1;IntlCS;[ON,Defeat];Cooling interlock on/off;ON
+LDM6A   ;$10;$28;$23;u8;ArUrSr;;0;2;IntlED;[OK,NOT OK,Defeated];External interlock state;OK
+LDM6A   ;$10;$29;$24;u8;ArUrSr;;0;2;IntlCD;[OK,NOT OK,Defeated];Cooling interlock state;NOT OK
+LDM6A   ;$10;$FF;$30;;;;;;;;Feedback photodiode;
+LDM6A   ;$10;$2A;$31;u16;ArUrSr;;0;1023;PhdOut;%u;Feedback photodiode output;0
+LDM6A   ;$10;$2B;$32;u16;AUrS;NV;0;1023;PhdSet;%u;Keep feedback photodiode level;0
+LDM6A   ;$10;$FF;$40;;;;;;;;TEC;
+LDM6A   ;$10;$31;$41;u8;AUrS;NV;0;1;TECState;[OFF,ON,FAULT];TEC Power;OFF
+LDM6A   ;$10;$32;$41;s16;ArUrSr;;-3000;5000;Tdisp;%.2fC;Display temperature;26.80
+LDM6A   ;$10;$33;$41;s16;AUrS;NV;-3000;5000;Tset;%.2fC;Set temperature;25.00
+LDM6A   ;$10;$34;$41;u8;ArUrSr;;0;1;Stable;[Not Stable,Stable];Stable;Not Stable
+LDM6A   ;$10;$35;$41;s16;AUrSr;NV;2000;5000;TsetMax;%.2fC;Set temperature upper limit;50.00
+LDM6A   ;$10;$36;$41;s16;AUrSr;NV;-3000;3000;TsetMin;%.2fC;Set temperature lower limit;20.00
+LDM6A   ;$10;$37;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Kp;%.6f;Kp;0.738377
+LDM6A   ;$10;$38;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Ki;%.6f;Ki;0.095511
+LDM6A   ;$10;$39;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Kd;%.6f;Kd;3.000000
+LDM6A   ;$10;$3A;$41;u8;A;;0;1;Manual;[OFF,ON];Manual control;OFF
+LDM6A   ;$10;$3B;$41;s16;ASr;;-610;610;TECDrive;%d;PID output;0
+LDM6A   ;$10;$3C;$41;s16;A;NV;-609;610;TECDriveMax;%d;PID output max;610
+LDM6A   ;$10;$3D;$41;s16;A;NV;-610;610;TECDriveMin;%d;PID output min;-610
+LDM6A   ;$10;$3E;$41;u16;AS;NV;1;1000;StabWnd;%.2f C;Stability window;1.00
+LDM6A   ;$10;$3F;$41;u16;AS;NV;0;120;StabTim;%u s;Time to stay in window to be considered stable;10
+LDM6A   ;$10;$44;$41;u16;AS;NV;2500;4500;NTCTC;%u K;NTC sensor TC;3892
+LDM6A   ;$10;$45;$41;u16;AS;NV;3000;25000;NTCR0;%u Ohm;NTC sensor resistance at 25degC;10000
+LDM6A   ;$10;$41;$41;float;ArSr;;-3.40282346638529E38;3.40282346638529E38;Rdisp;%g Ohm;Measured sensor resistance;9237.1533203125
+LDM6A   ;$10;$42;$41;s16;ArSr;;-500;500;TECVoltage;%.2fV;TEC Voltage;0.00
+LDM6A   ;$10;$43;$41;s16;ArSr;;-1250;1250;TECCurrent;%.2fA;TEC Current;0.17
+LDM6A   ;$10;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware LDM6A;200217
+LDM150A ;$11;$FF;$0;;;;;;;;;
+LDM150A ;$11;$10;$0;u8;AUS;NV;0;1;State;[OFF,ON,FAULT];Power;OFF
+LDM150A ;$11;$11;$1;u8;AUS;;0;1;LDon;[OFF,ON];Diode current ON;ON
+LDM150A ;$11;$12;$2;u16;AUrS;NV;0;50000;Iset;%.2fA;Set Current;100.00
+LDM150A ;$11;$13;$3;u16;ArUrSr;;0;15000;Idisp;%.2fA;Display Current;199.80
+LDM150A ;$11;$14;$4;u16;ArUrSr;;0;15000;Imean;%.2fA;Mean Current;0.19
+LDM150A ;$11;$17;$7;u16;ArUrSr;;0;13954;Pi;%.2fW;Current source power;0.60
+LDM150A ;$11;$18;$8;u16;ArUrSr;;0;11330;Vld;%.2fV;Voltage on LD source;5.98
+LDM150A ;$11;$30;$8;u16;AUrS;NV;50;500;PulseW;%u us;Pulse width;200
+LDM150A ;$11;$2F;$8;u16;AUS;NV;50;8000;SyncDly;%u us;SyncIn->Pulse delay;50
+LDM150A ;$11;$46;$8;u8;AUrS;NV;0;1;SyncMode;[Internal,External];Synchronization mode;External
+LDM150A ;$11;$47;$8;u16;AUrS;NV;1;1100;RepRate;%.1f Hz;Repetition rate (repetition rate limit);51.0
+LDM150A ;$11;$19;$9;u8;ArUrSr;;0;3;Fault;[NONE,DRIVER,COOLING,INTERLOCK];Fault source;NONE
+LDM150A ;$11;$1A;$A;u16;ArUrSr;;0;65535;Fcode;%xHEX;Fault code;0
+LDM150A ;$11;$1B;$B;u32;AUrS;NV;0;4294967295;Time;%u;Pulse counter;17198616
+LDM150A ;$11;$FF;$10;;;;;;;;Setup;
+LDM150A ;$11;$1D;$12;u16;AUrS;NV;0;50000;Ilim;%.2fA;Set current Limit;130.00
+LDM150A ;$11;$16;$15;u16;AUrS;NV;113;612;Vsrc;%.2f V;Set LD current source voltage;6.00
+LDM150A ;$11;$22;$17;u16;ArUrSr;;0;20000;CurLimM;%.2fA;Peak current limit (hardware);140.62
+LDM150A ;$11;$24;$19;u16;AUrSr;NV;100;2500;PhdMax;%.2fW;Current source power limit;25.00
+LDM150A ;$11;$25;$1A;s16;AUrS;NV;-3000;3000;CalIset;%d;Calibrate set current;0
+LDM150A ;$11;$2D;$1C;u16;AUrS;NV;0;4000;SampWndLo;%u us;Start peak current sampling window;100
+LDM150A ;$11;$2E;$1C;u16;AUrS;NV;60;4000;SampWndHi;%u us;Stop peak current sampling window;150
+LDM150A ;$11;$48;$1C;u8;AS;NV;4;60;StartUpDelay;%us;Startup delay;5
+LDM150A ;$11;$FF;$20;;;;;;;;Interlocks;
+LDM150A ;$11;$26;$21;u8;AUrS;NV;0;1;IntlES;[ON,Defeat];External interlock on/off;ON
+LDM150A ;$11;$27;$22;u8;AUrS;NV;0;1;IntlCS;[ON,Defeat];Cooling interlock on/off;ON
+LDM150A ;$11;$28;$23;u8;ArUrSr;;0;2;IntlED;[OK,NOT OK,Defeated];External interlock state;OK
+LDM150A ;$11;$29;$24;u8;ArUrSr;;0;2;IntlCD;[OK,NOT OK,Defeated];Cooling interlock state;OK
+LDM150A ;$11;$FF;$30;;;;;;;;Feedback photodiode;
+LDM150A ;$11;$2A;$31;u16;ArUrSr;;0;1023;PhdOut;%u;Feedback photodiode output;0
+LDM150A ;$11;$2B;$32;u16;AUrS;NV;0;1023;PhdSet;%u;Keep feedback photodiode level;0
+LDM150A ;$11;$FF;$40;;;;;;;;TEC;
+LDM150A ;$11;$31;$41;u8;AUrS;NV;0;1;TECState;[OFF,ON,FAULT];TEC Power;ON
+LDM150A ;$11;$32;$41;s16;ArUrSr;;-200;4600;Tdisp;%.2fC;Display temperature;28.02
+LDM150A ;$11;$33;$41;s16;AUrS;NV;-200;4600;Tset;%.2fC;Set temperature;28.00
+LDM150A ;$11;$34;$41;u8;ArUrSr;;0;1;Stable;[Not Stable,Stable];Stable;Stable
+LDM150A ;$11;$35;$41;s16;AUrSr;NV;2000;4600;TsetMax;%.2fC;Set temperature upper limit;50.00
+LDM150A ;$11;$36;$41;s16;AUrSr;NV;-200;3000;TsetMin;%.2fC;Set temperature lower limit;20.00
+LDM150A ;$11;$37;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Kp;%.6f;Kp;0.511364
+LDM150A ;$11;$38;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Ki;%.6f;Ki;0.071429
+LDM150A ;$11;$39;$41;float;A;NV;-3.40282346638529E38;3.40282346638529E38;Kd;%.6f;Kd;3.500000
+LDM150A ;$11;$3A;$41;u8;A;;0;1;Manual;[OFF,ON];Manual control;OFF
+LDM150A ;$11;$3B;$41;s16;ASr;;-128;128;TECDrive;%d;PID output;9
+LDM150A ;$11;$3C;$41;s16;A;NV;-127;128;TECDriveMax;%d;PID output max;90
+LDM150A ;$11;$3D;$41;s16;A;NV;-128;127;TECDriveMin;%d;PID output min;-90
+LDM150A ;$11;$3E;$41;u16;AS;NV;1;1000;StabWnd;%.2f C;Stability window;0.50
+LDM150A ;$11;$3F;$41;u16;AS;NV;0;120;StabWnd;%u s;Time to stay in window to be considered stable;10
+LDM150A ;$11;$41;$41;float;ArSr;;-3.40282346638529E38;3.40282346638529E38;Rdisp;%g Ohm;Measured sensor resistance;1109.06787109375
+LDM150A ;$11;$42;$41;s16;ArSr;;-1225;1225;TECVoltage;%.2fV;TEC Voltage;0.33
+LDM150A ;$11;$43;$41;s16;ArSr;;-1250;1250;TECCurrent;%.2fA;TEC Driver Current;0.17
+LDM150A ;$11;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware LDM150A;130225
+CPU8000 ;$15;$FF;$0;;;;;;;;;
+CPU8000 ;$15;$10;$0;u8;AUS;NV;0;1;State;[OFF,ON,FAULT];Power;OFF
+CPU8000 ;$15;$11;$1;u8;AUS;;0;1;LDon;[OFF,ON];Diode current ON;ON
+CPU8000 ;$15;$12;$2;u16;AUS;NV;0;40000;Iset;%.2fA;Set Current;272.00
+CPU8000 ;$15;$13;$4;u16;ArUrSr;;0;1300;Idisp;%.1fA;Display Current;1.3
+CPU8000 ;$15;$1C;$5;u16;ArUrSr;;0;2500;Humidity;%.1f%;Humidity;104.9
+CPU8000 ;$15;$15;$5;u16;ArUrSr;;0;2500;HmdTemp;%.1fC;Humidity sensor temperature;0.0
+CPU8000 ;$15;$16;$6;u16;ArUrSr;;0;33279;Vi;%.2fV;I source voltage;48.14
+CPU8000 ;$15;$18;$8;u16;ArUrSr;;0;33279;Vld;%.2fV;Voltage on LD;0.63
+CPU8000 ;$15;$19;$9;u8;ArUrSr;;0;3;Fault;[NONE,DRIVER,COOLING,INTERLOCK];Fault source;NONE
+CPU8000 ;$15;$1A;$A;u16;ArUrSr;;0;65535;Fcode;%xHEX;Fault code;0
+CPU8000 ;$15;$1B;$B;u32;AUrS;NV;0;4294967295;Time;%us;Work seconds;322998
+CPU8000 ;$15;$FF;$10;;;;;;;;Synchronization;
+CPU8000 ;$15;$33;$11;u8;ASr;NV;0;1;SyncM;[Internal,External];Synchronization mode;External
+CPU8000 ;$15;$31;$12;u16;AS;NV;1;11000;RepRate;%.1fHz;Repetition rate;50.1
+CPU8000 ;$15;$4A;$12;u16;A;NV;0;11000;RepRateMin;%.1fHz;Repetition rate low limit;49.0
+CPU8000 ;$15;$4B;$12;u16;A;NV;1;11000;RepRateMax;%.1fHz;Repetition rate high limit;51.1
+CPU8000 ;$15;$21;$12;u8;AUS;NV;0;1;RRMinIntl;[OFF,ON];Enable coarse rep.rate low interlock;OFF
+CPU8000 ;$15;$30;$13;u16;AS;NV;50;1000;PulseW;%uus;LD Pulse width;200
+CPU8000 ;$15;$2C;$13;u16;AS;NV;50;1000;PulseWAdjOff;%uus;LD Pulse width for Adjustment/Off;200
+CPU8000 ;$15;$2F;$14;u16;AS;NV;150;5000;SyncDly;%uus;SyncIN->Pulse delay;150
+CPU8000 ;$15;$34;$15;u16;AS;NV;0;50;ShuntDly;%uus;Shunt Off delay;0
+CPU8000 ;$15;$32;$15;s32;AUS;NV;-100000;100000;SyncOutDly;%dus;Sync Out delay;0
+CPU8000 ;$15;$35;$15;u16;AUrS;NV;50;1000;QSWMaxDly;%uus;QSW MAX output delay;100
+CPU8000 ;$15;$36;$15;u16;AUrS;NV;50;1000;QSWAdjDly;%uus;QSW Adjustment output delay;100
+CPU8000 ;$15;$37;$15;u8;AUrS;NV;0;1;QSWMode;[1-SYNC,2-SYNC];QSW synchronization mode;1-SYNC
+CPU8000 ;$15;$38;$15;u8;AUrS;NV;0;2;Energy;[OFF,Adjust,MAX];Output Energy level;OFF
+CPU8000 ;$15;$F;$15;u8;A;;0;1;CanOutputEnable;[OFF,ON];Output enable;ON
+CPU8000 ;$15;$39;$15;u16;AUS;NV;1;5000;FDivider;%u;Frequency divider;1
+CPU8000 ;$15;$3A;$15;u16;AUS;;1;50000;Pack;%u;Burst length;1
+CPU8000 ;$15;$3B;$15;u16;ArUrSr;;1;50000;Pack;%u;Burst pulses to go;0
+CPU8000 ;$15;$3C;$15;u8;AUS;;0;2;BatchM;[Continuous,Burst,Trigger];Continuous / Burst mode / Trigger burst;Continuous
+CPU8000 ;$15;$3D;$15;u8;AUrS;NV;0;120;LampLensT;%us;Amplifier warming timer;0
+CPU8000 ;$15;$FF;$20;;;;;;;;Setup;
+CPU8000 ;$15;$1D;$22;u16;AUrS;NV;0;40000;Ilim;%.2fA;Set Current limit;320.00
+CPU8000 ;$15;$25;$22;s16;AUrS;NV;25;5000;CalIset;%.1f mOhm;Set Current Rsense;3.9
+CPU8000 ;$15;$1E;$22;s16;AUrS;NV;500;10000;CalIdisp;%.5f;Calibrate display current;0.01199
+CPU8000 ;$15;$1F;$22;u8;AUrSr;NV;0;1;dI;[SLOW,FAST];Current slew rate;SLOW
+CPU8000 ;$15;$22;$24;u16;ArUrSr;;0;1300;CurLimM;%.1fA;Current limit median;63.3
+CPU8000 ;$15;$23;$25;u16;ArUrSr;;0;1300;CurLimP;%.1fA;Current limit peak;328.6
+CPU8000 ;$15;$44;$25;u16;AUrSr;NV;0;100;HmdLim;%u%;Humidity limit;0
+CPU8000 ;$15;$20;$26;u8;AUrSr;NV;0;1;UIEnable;[PL,NL];Option NL/PL;PL
+CPU8000 ;$15;$45;$26;u16;AUrSr;NV;50;1000;OptimDuty;%.2f%;Optimal duty cycle;0.50
+CPU8000 ;$15;$46;$26;u16;AUrSr;NV;50;1000;FDPulseW;%uus;Pulse width for fixed duty cycler;50
+CPU8000 ;$15;$47;$26;u8;AUrSr;NV;0;2;PumpMode;[Normal,Fixed duty,Test duty];Pump mode;Normal
+CPU8000 ;$15;$48;$26;u16;ASr;;100;1000;FDTDly;%uus;Test mode delay;100
+CPU8000 ;$15;$49;$26;u16;ASr;;0;1000;FDCorDly;%uus;Test mode correction delay;0
+CPU8000 ;$15;$2D;$26;u16;AS;NV;1000;35000;CVld;%u;Calibrate Vld and Vi;11366
+CPU8000 ;$15;$4C;$26;u16;AUrS;NV;0;2500;TempLim;%.1fC;Temperature limit;0.0
+CPU8000 ;$15;$4D;$31;u8;AUrS;NV;0;1;SendEmergency;[OFF,ON];Send EmergencyStop on failure;OFF
+CPU8000 ;$15;$FF;$30;;;;;;;;Interlocks;
+CPU8000 ;$15;$26;$31;u8;AUrS;NV;0;1;IntlES;[ON,Defeat];External interlock on/off;ON
+CPU8000 ;$15;$28;$31;u8;ArUrSr;;0;2;IntlED;[OK,NOT OK,Defeated];External interlock state;OK
+CPU8000 ;$15;$27;$31;u8;AUrS;NV;0;1;IntlCS;[ON,Defeat];Cooling interlock on/off;Defeat
+CPU8000 ;$15;$29;$31;u8;ArUrSr;;0;2;IntlCD;[OK,NOT OK,Defeated];Cooling interlock state;Defeated
+CPU8000 ;$15;$3E;$31;u8;AUrS;NV;0;1;IntlC2S;[ON,Defeat];Cooling interlock 2 on/off;Defeat
+CPU8000 ;$15;$3F;$31;u8;ArUrSr;;0;2;IntlC2D;[OK,NOT OK,Defeated];Cooling interlock 2 state;Defeated
+CPU8000 ;$15;$40;$31;u8;AUrS;NV;0;1;IntlC3S;[ON,Defeat];Cooling interlock 3 on/off;Defeat
+CPU8000 ;$15;$41;$31;u8;ArUrSr;;0;2;IntlC3D;[OK,NOT OK,Defeated];Cooling interlock 3 state;Defeated
+CPU8000 ;$15;$42;$31;u8;AUrS;NV;0;1;IntlFlS;[ON,Defeat];Flow interlock on/off;ON
+CPU8000 ;$15;$43;$31;u8;ArUrSr;;0;2;IntlFlD;[OK,NOT OK,Defeated];Flow interlock state;OK
+CPU8000 ;$15;$FF;$40;;;;;;;;Feedback photodiode;
+CPU8000 ;$15;$2A;$41;u16;ArUrSr;;0;4095;PhdOut;%u;Feedback photodiode output;9
+CPU8000 ;$15;$2B;$42;u16;AUrS;NV;0;4095;PhdSet;%u;Keep feedback photodiode level;0
+CPU8000 ;$15;$FF;$50;;;;;;;;Fixed duty cycle correction table;
+CPU8000 ;$15;$4E;$51;u8;AS;;0;29;FDCorIdx;%u;Correction table index;0
+CPU8000 ;$15;$4F;$51;s16;AS;NV;-1;1000;FDCorDelay;%d;Correction table delay;70
+CPU8000 ;$15;$50;$51;s16;AS;NV;0;200;FDCorCor;%d;Correction table correction;15
+CPU8000 ;$15;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware CPU8000p;180108
+MaxiOPG ;$1F;$FF;$0;;;;;;;;;
+MaxiOPG ;$1F;$10;$0;float;AUS;NV;680;10000;;%.7gnm;WaveLength;3000
+MaxiOPG ;$1F;$11;$1;u8;ArUrSr;;0;3;;[Off,Initiation,Tuning...,Ok.];Status;Ok.
+MaxiOPG ;$1F;$12;$2;u8;AUS;;0;2;;[Off,On,Delayed];Backlash compensation;On
+MaxiOPG ;$1F;$14;$4;u8;AS;NV;0;3;;[Never,On Range Change,On Motors Move,On Section Change];Laser off;On Range Change
+MaxiOPG ;$1F;$15;$5;u16;Ar;;0;8191;;%d bytes;Available RAM;4422
+MaxiOPG ;$1F;$16;$6;u32;Ar;;0;196608;;%d bytes;Available ROM;111568
+MaxiOPG ;$1F;$FF;$30;;;;;;;;Motors Positions;
+MaxiOPG ;$1F;$20;$31;float;AUS;;-112.5;112.5;;%0.3f;DG. Motor 0.9°/512;19.489
+MaxiOPG ;$1F;$21;$31;float;AUS;;-112.5;112.5;;%0.3f;OPO. Motor 0.9°/512;12.655
+MaxiOPG ;$1F;$22;$31;float;AUS;;-112.5;112.5;;%0.3f;OPA. Motor 0.9°/512;18.785
+MaxiOPG ;$1F;$23;$31;float;AUS;;-112.5;112.5;;%0.3f;DFG_Cr. Motor 0.9°/512;-68.273
+MaxiOPG ;$1F;$24;$31;float;AUS;;0;180;;%0.3f;DFG_Cm. Motor 1.8°/2;35.064
+MaxiOPG ;$1F;$25;$31;float;AUS;;0;290;;%0.3f;Lambda. Motor 7.5°/2;0.000
+MaxiOPG ;$1F;$26;$31;float;AUS;;0;330;;%0.3f;Rochon. RotH Hollow shaft 800mA.;103.500
+MaxiOPG ;$1F;$27;$31;float;AUS;;0;180;;%0.3f;DFG_Sw. Motor 1.8°/2;45.000
+MaxiOPG ;$1F;$28;$31;float;AUS;;0;290;;%0.3f;Filter. Motor 7.5°/2;90.000
+MaxiOPG ;$1F;$29;$31;float;AUS;;0;1;;%0.3f;Beam_Sw. Beam Switch;1.000
+MaxiOPG ;$1F;$2A;$31;float;AUS;;-500;500;;%0.3f;Dummy. Dummy Motor;0.000
+MaxiOPG ;$1F;$FF;$40;;;;;;;;Detectors;
+MaxiOPG ;$1F;$5C;$41;float;AUS;NV;1;3;;%0.3f;Multiplier  OPO;1.120
+MaxiOPG ;$1F;$5D;$42;float;AUS;NV;1;3;;%0.3f;Multiplier  DFG;1.120
+MaxiOPG ;$1F;$64;$43;u16;ArUrSr;;0;8191;;%d;Raw data  OPO;0
+MaxiOPG ;$1F;$65;$44;u16;ArUrSr;;0;8191;;%d;Raw data  DFG;0
+MaxiOPG ;$1F;$FF;$50;;;;;;;;Energy Meters;
+MaxiOPG ;$1F;$60;$51;float;ArUrSr;;0;10;;%4.1f mJ;OPO; 0.0
+MaxiOPG ;$1F;$61;$52;float;ArUrSr;;0;6;;%4.2f mJ;AgGaS2;0.00
+MaxiOPG ;$1F;$62;$53;float;ArUrSr;;0;8;;%4.2f mJ;GaSe;0.00
+MaxiOPG ;$1F;$7C;$E;str8;ArUrSr;;0;0;;%s;Type;PG501DFG
+MaxiOPG ;$1F;$7D;$F;str8;ArUrSr;;0;0;;%s;Serial Nm.;292     
+MaxiOPG ;$1F;$FF;$60;;;;;;;;Versions;
+MaxiOPG ;$1F;$70;$61;u8;ArUrSr;;0;127;;%d;Kernel;34
+MaxiOPG ;$1F;$9;$62;u32;ArUrSr;;200101;401231;;%dyymmdd;Kernel Rev. Date;210209
+MaxiOPG ;$1F;$71;$63;u16;ArUrSr;;0;65535;;%xHex;Softw. file;300
+MaxiOPG ;$1F;$72;$64;u16;ArUrSr;;0;65535;;%xHex;Hardw. file;103
+MaxiOPG ;$1F;$73;$65;u8;ArUrSr;;1;16;;%d;PCB;1
+MaxiOPG ;$1F;$74;$66;str8;ArUrSr;;0;0;;%s;TMC controller;429v1.01
+SY3PL50M;$20;$FF;$0;;;;;;;;;
+SY3PL50M;$20;$10;$0;u8;AUS;NV;0;1;State;[OFF,ON,Failure];State;OFF
+SY3PL50M;$20;$14;$8;u8;AUrS;NV;0;1;SyncM;[Internal,External];Synchronization Mode;Internal
+SY3PL50M;$20;$30;$8;u16;ArUrSr;;0;1000;ExtFreq;%.1fHz;External SyncIn frequency;0.0
+SY3PL50M;$20;$18;$A;u16;ArSr;;0;660;PhdBias;%.2fV;Photodiode bias;5.96
+SY3PL50M;$20;$19;$B;u32;ArUrSr;;0;4294967295;OptClk;%uHz;Optical Clock;0
+SY3PL50M;$20;$1B;$B;u32;AUS;NV;2;524287;PreTDly;%u 1/OptClk;PRE-T delay;88656
+SY3PL50M;$20;$1A;$B;u16;AUS;NV;10;65535;Delay1;%.1fns;OUT1 delay;11.5
+SY3PL50M;$20;$1D;$B;u16;AUS;NV;10;65535;Delay2;%.1fns;OUT2 delay;704.3
+SY3PL50M;$20;$1E;$B;u16;AUS;NV;10;65535;Delay3;%.1fns;OUT3 delay;700.0
+SY3PL50M;$20;$1F;$B;u16;AUS;NV;10;65535;Delay4;%.1fns;OUT4 delay;15.0
+SY3PL50M;$20;$20;$B;u16;AUS;NV;10;65535;Delay5;%.1fns;OUT5 delay;15.0
+SY3PL50M;$20;$21;$B;u16;AUS;NV;10;65535;Delay6;%.1fns;SyncOut delay;15.0
+SY3PL50M;$20;$23;$B;u8;ArUrSr;;0;3;CLKvalid;[NOCLOCK-NOLOCK,NOCLOCK-LOCKOK,CLOCKOK-NOLOCK,CLOCKOK-LOCKOK];Clock and lock detector;NOCLOCK-NOLOCK
+SY3PL50M;$20;$24;$B;u32;AUrSr;NV;1;50000;RepRate;%.1fHz;Repetition rate;50.0
+SY3PL50M;$20;$FF;$10;;;;;;;;Setup;
+SY3PL50M;$20;$38;$11;u8;AS;NV;19;90;OscClock;%uMHz;Oscilator clock;88
+SY3PL50M;$20;$33;$31;s16;AS;NV;-5000;1000;OptAmpDly;%dus;Optimal amplifier delay;193
+SY3PL50M;$20;$34;$11;u32;AS;NV;2;524287;QswDly;%u 1/OptClk;QSW delay;88600
+SY3PL50M;$20;$2B;$11;u8;AUrSr;NV;1;63;PreTDiv;%u;PRE-T clock divider;1
+SY3PL50M;$20;$3B;$11;u8;AS;NV;0;1;Out1Bit;[DISABLE,ENABLE];OUT1 enable coarse delay;DISABLE
+SY3PL50M;$20;$3C;$11;u32;AS;NV;2;524287;Out1Dly;%u 1/OptClk;OUT1 coarse delay;2
+SY3PL50M;$20;$25;$11;u32;AUrS;NV;1;50000;RepRateMin;%.1fHz;Repetition rate low limit;49.0
+SY3PL50M;$20;$26;$11;u32;AUrS;NV;1;50000;RepRateMax;%.1fHz;Repetition rate high limit;51.0
+SY3PL50M;$20;$17;$11;u8;AUrS;NV;0;120;LampLensT;%us;Amplifier warming time;5
+SY3PL50M;$20;$2A;$11;u8;AS;NV;0;1;SyncRPhase;%u;/SYNC Phase;0
+SY3PL50M;$20;$32;$11;u8;AS;NV;0;134;StartupDelay;%us;Start->Lasing delay;5
+SY3PL50M;$20;$35;$11;u8;AS;NV;0;15;PhdSyncDiv;[/1,/2,/4,/8,/16,/32,/64,/128,/256,/512,/1024,/2048,/4096,/8192,/16384,/32768];PHD sync divider;/1
+SY3PL50M;$20;$3A;$11;u8;AS;NV;0;2;Options;[AMP,REGEN,AMP+REGEN];Energy fine tune option;AMP+REGEN
+SY3PL50M;$20;$46;$11;u8;AUS;NV;0;1;GateMode;[GATE,BURSTTRIG];GATE input function;GATE
+SY3PL50M;$20;$47;$11;u8;ArUrSr;NV;0;1;GatePin;[SHORT,OPEN];GATE input;OPEN
+SY3PL50M;$20;$48;$11;u8;AUrS;NV;0;1;CANSilence;[OFF,ON];Slave mode;OFF
+SY3PL50M;$20;$49;$11;u8;AUrS;NV;0;1;StopNoLock;[OFF,ON];Stop on NOLOCK;OFF
+SY3PL50M;$20;$4A;$11;u32;AUS;NV;1;1000000000;ExtSyncDiv;%u;SYNC IN divider;1
+SY3PL50M;$20;$29;$F;u8;A;;0;1;Calibrate;%u;Trigger calibrate LMK;0
+SY3PL50M;$20;$FF;$20;;;;;;;;Laser controls;
+SY3PL50M;$20;$36;$21;u8;AUS;;1;100;Energy;%u%;Amplification;1
+SY3PL50M;$20;$39;$21;u8;AUS;NV;1;100;EnergyMax;%u%;Amplification limit;100
+SY3PL50M;$20;$37;$21;u8;AUS;;0;1;AmplOn;[OFF,ON];Amplifier On/Off;ON
+SY3PL50M;$20;$40;$21;u8;AUS;NV;0;2;OffAdjMax;[OFF,Adjustment,Maximum];Energy level;OFF
+SY3PL50M;$20;$41;$21;u16;AUS;NV;50;5000;AdjDelay;%uus;Pump delay, adj. level;750
+SY3PL50M;$20;$42;$21;u16;AUrS;NV;50;5000;MaxDelay;%uus;Pump delay, max. output;808
+SY3PL50M;$20;$43;$21;u8;AUS;NV;0;1;HOutput;[Fundamental,Harmonic];Output redirection;Fundamental
+SY3PL50M;$20;$44;$21;s16;AUrS;NV;-32768;32767;HOutputSet[0];%d;Out. redir. fundamental position;0
+SY3PL50M;$20;$45;$21;s16;AUrS;NV;-32768;32767;HOutputSet[1];%d;Out. redir. harmonic position;1
+SY3PL50M;$20;$2C;$21;u16;AS;NV;1;5000;FDivider;%u;Frequency divider;1
+SY3PL50M;$20;$2F;$21;u8;AS;NV;0;2;BatchM;[Continuous,Burst,Trigger];Continuous / Burst mode / Trigger burst;Continuous
+SY3PL50M;$20;$2D;$21;u16;AS;;1;50000;Pack;%u;Burst length, pulses;1
+SY3PL50M;$20;$2E;$21;u16;ArSr;;1;50000;PackLeft;%u;Burst pulses to go;0
+SY3PL50M;$20;$31;$21;u8;AS;;0;1;CDON;[OFF,ON];CD ON/OFF;ON
+SY3PL50M;$20;$FF;$30;;;;;;;;CPLD version;
+SY3PL50M;$20;$3D;$32;str8;ArUrSr;;0;0;CPLDVer0;%s;CPLD Version string;PL2250  
+SY3PL50M;$20;$3E;$33;u32;ArUrSr;;0;4294967295;CPLDVer1;%u;CPLD Version number;2
+SY3PL50M;$20;$3F;$33;u32;ArUrSr;;0;4294967295;CPLDate;%u;CPLD date code;150106
+SY3PL50M;$20;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SY3PL50M;191127
+HV40W   ;$28;$FF;$0;;;;;;;;;
+HV40W   ;$28;$10;$1;u8;AUS;NV;0;1;Pwr;[OFF,ON];Power switch;OFF
+HV40W   ;$28;$11;$2;u16;AUrS;NV;0;5000;SHV;%uV;Set HV voltage;2000
+HV40W   ;$28;$12;$3;u16;ArUrSr;;0;5000;HV;%uV;HV voltage;11
+HV40W   ;$28;$13;$4;u16;ArUrSr;;0;4092;IHV;%.2fmA;HV current;0.01
+HV40W   ;$28;$15;$6;u8;ArUrSr;;0;1;Enab;[OFF,ON];HV supply enabled;ON
+HV40W   ;$28;$16;$7;u8;ArUrSr;;0;2;OK;[OFF,OK,BURST];Power circuit status;OFF
+HV40W   ;$28;$17;$8;u8;ArUrSr;;0;1;CL;[Current Limit,OK];Current limit status;OK
+HV40W   ;$28;$FF;$10;;;;;;;;Calibrate;
+HV40W   ;$28;$18;$11;u16;ASr;NV;5;1200;IHL;%.1fmA;Current limit;2.5
+HV40W   ;$28;$19;$12;s16;ASr;NV;-32767;32767;CHV;%d;Calibrate HV voltage;469
+HV40W   ;$28;$1A;$13;s16;ASr;NV;-32767;32767;CDHV;%d;Calibrate display HV voltage;-700
+HV40W   ;$28;$14;$14;u16;ASr;NV;100;40000;Ki;%.1fV/A;Current sensor constant;1000.0
+HV40W   ;$28;$1C;$16;u16;ASr;NV;0;5000;SHVLim;%uV;High Voltage Limit;2800
+HV40W   ;$28;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Version HV40W;200124
+SM5-HM1 ;$2E;$FF;$0;;;;;;;;;
+SM5-HM1 ;$2E;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-HM1 ;$2E;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-HM1 ;$2E;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-HM1 ;$2E;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-HM1 ;$2E;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-HM1 ;$2E;$FF;$10;;;;;;;;Motor Setup;
+SM5-HM1 ;$2E;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-HM1 ;$2E;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-HM1 ;$2E;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;4000
+SM5-HM1 ;$2E;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;2000
+SM5-HM1 ;$2E;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;2000
+SM5-HM1 ;$2E;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-HM1 ;$2E;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-HM1 ;$2E;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-HM1 ;$2E;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-HM1 ;$2E;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-HM1 ;$2E;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-HM1 ;$2E;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-HM1 ;$2E;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-HM1 ;$2E;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;H--
+SM5-HM1 ;$2E;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-HM2 ;$2F;$FF;$0;;;;;;;;;
+SM5-HM2 ;$2F;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-HM2 ;$2F;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-HM2 ;$2F;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-HM2 ;$2F;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-HM2 ;$2F;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-HM2 ;$2F;$FF;$10;;;;;;;;Motor Setup;
+SM5-HM2 ;$2F;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-HM2 ;$2F;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-HM2 ;$2F;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;4000
+SM5-HM2 ;$2F;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;3000
+SM5-HM2 ;$2F;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;5000
+SM5-HM2 ;$2F;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-HM2 ;$2F;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-HM2 ;$2F;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;H--
+SM5-HM2 ;$2F;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-HM2 ;$2F;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-HM2 ;$2F;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-HM2 ;$2F;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-HM2 ;$2F;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;H--
+SM5-HM2 ;$2F;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;171010
+PHD1K000;$30;$FF;$0;;;;;;;;;
+PHD1K000;$30;$18;$0;u16;ArUrSr;;0;65535;Data;%u;Data;27541
+PHD1K000;$30;$11;$1;float;ArUrSr;;0;3.40282346638529E38;Mean;%f;Mean;89.8684
+PHD1K000;$30;$12;$2;u16;ArUrSr;;0;10000;StdDev;%.2f%;Standard deviation;0.09
+PHD1K000;$30;$13;$3;float;ArUrSr;;0;3.40282346638529E38;Min;%f;Minimum;89.6272
+PHD1K000;$30;$14;$4;float;ArUrSr;;0;3.40282346638529E38;Max;%f;Maximum;90.1162
+PHD1K000;$30;$15;$5;u16;AUS;NV;1;65535;Batch;%upulses;Batch size;150
+PHD1K000;$30;$16;$6;u8;AS;NV;0;8;Atten;[/1,/2,/4,/8,/16,/32,/64,/128,/256];Attenuator position;/1
+PHD1K000;$30;$FF;$10;;;;;;;;Acquisition mode;
+PHD1K000;$30;$17;$11;u8;AS;NV;0;2;SyncM;[RISE,FALL,POLL];Sync mode;RISE
+PHD1K000;$30;$FF;$20;;;;;;;;Calibrate;
+PHD1K000;$30;$19;$21;float;AS;NV;1.17549435082229E-38;3.40282346638529E38;Limit;%f;Energy limit;1E009
+PHD1K000;$30;$1A;$25;float;A;NV;1.17549435082229E-38;9.99999968028569E37;CalConst;%f;Calibrate constant;0.00326
+PHD1K000;$30;$1D;$28;u16;A;NV;0;10000;Offset;%u;ADC offset;160
+PHD1K000;$30;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Version PHDMET16;201028
+SM5-M4  ;$32;$FF;$0;;;;;;;;;
+SM5-M4  ;$32;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-M4  ;$32;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;-15000
+SM5-M4  ;$32;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;-15000
+SM5-M4  ;$32;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-M4  ;$32;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-M4  ;$32;$FF;$10;;;;;;;;Motor Setup;
+SM5-M4  ;$32;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-M4  ;$32;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-M4  ;$32;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;6000
+SM5-M4  ;$32;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;3000
+SM5-M4  ;$32;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;5000
+SM5-M4  ;$32;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.40
+SM5-M4  ;$32;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-M4  ;$32;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;H--
+SM5-M4  ;$32;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-M4  ;$32;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-M4  ;$32;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-M4  ;$32;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-M4  ;$32;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-M4  ;$32;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;H--
+SM5-M4  ;$32;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-M6  ;$33;$FF;$0;;;;;;;;;
+SM5-M6  ;$33;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-M6  ;$33;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;45000
+SM5-M6  ;$33;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;45000
+SM5-M6  ;$33;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-M6  ;$33;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-M6  ;$33;$FF;$10;;;;;;;;Motor Setup;
+SM5-M6  ;$33;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-M6  ;$33;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-M6  ;$33;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;7000
+SM5-M6  ;$33;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;5000
+SM5-M6  ;$33;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;5000
+SM5-M6  ;$33;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.50
+SM5-M6  ;$33;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-M6  ;$33;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;H--
+SM5-M6  ;$33;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-M6  ;$33;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-M6  ;$33;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-M6  ;$33;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-M6  ;$33;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-M6  ;$33;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-M6  ;$33;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+MonoChrm;$37;$FF;$0;;;;;;;;;
+MonoChrm;$37;$10;$0;float;AUS;NV;400;640;;%.7gnm;WaveLength;532.1
+MonoChrm;$37;$11;$1;u8;ArUrSr;;0;3;;[Off,Initiation,Tuning...,Ok.];OPG Status;Ok.
+MonoChrm;$37;$38;$2;u8;ArUrSr;;0;5;;[Off,Initiation,Tuning...,Ok.,Fault,No Power];Motor Status;Ok.
+MonoChrm;$37;$12;$2;u8;AUrS;;0;2;;[Off,On,Delayed];Backlash compensation;On
+MonoChrm;$37;$3C;$5;s16;A;NV;-512;511;;%d Phase;Home Phase;453
+MonoChrm;$37;$15;$5;u16;Ar;;0;4096;;%d bytes;Available RAM;1465
+MonoChrm;$37;$16;$6;u32;Ar;;0;86016;;%d bytes;Available ROM;66200
+MonoChrm;$37;$17;$6;u8;AS;NV;0;2;;[Disabled,Delayed,Enabled];Error on no motor power;Delayed
+MonoChrm;$37;$18;$6;u8;ASr;NV;0;1;;[Fine Angle,Wide Angle];Motor type;Fine Angle
+MonoChrm;$37;$FF;$20;;;;;;;;Motors Positions;
+MonoChrm;$37;$20;$21;float;AUS;;-112.5;112.5;;%0.3f;DG. Motor 0.9°/512;0.000
+MonoChrm;$37;$FF;$20;;;;;;;;Thermostat;
+MonoChrm;$37;$40;$21;u8;AUS;NV;0;1;;[Off,On];Control;Off
+MonoChrm;$37;$41;$22;s16;AUS;NV;4000;6000;;%0.2f°C;Set temperature;40.00
+MonoChrm;$37;$42;$23;s16;AUS;NV;10;100;;%0.2f°C;Valid temp. range;0.20
+MonoChrm;$37;$43;$24;u8;AUS;NV;0;250;;%ds;Temp. validation time;120
+MonoChrm;$37;$44;$25;u8;ArUrSr;;0;1;;[No,Yes];Temperature valid;No
+MonoChrm;$37;$45;$26;u16;AUS;NV;0;15;;%d;PID derivatyve;12
+MonoChrm;$37;$46;$27;u16;AUS;NV;0;1000;;%d;PID proportional;500
+MonoChrm;$37;$47;$28;u16;AUS;NV;0;10000;;%d;PID integrated;10000
+MonoChrm;$37;$6A;$29;u8;ArUrSr;;0;255;;%d;PWM output;0
+MonoChrm;$37;$48;$2A;u8;A;;0;15;;%d;EEPROM Addr;3
+MonoChrm;$37;$49;$2B;u16;A;NV;0;65535;;%xHex;EEPROM Value;4000
+MonoChrm;$37;$68;$8;s16;ArUrSr;;0;8000;;%0.2f°C;Motor temperature;38.32
+MonoChrm;$37;$69;$9;s16;ArUrSr;;0;8000;;%0.2f°C;Cristal temperature;36.73
+MonoChrm;$37;$7C;$E;str8;ArUrSr;;0;0;;%s;Type;SFGfilt.
+MonoChrm;$37;$7D;$F;str8;ArUrSr;;0;0;;%s;Serial Nm.;sfg086  
+MonoChrm;$37;$FF;$60;;;;;;;;Versions;
+MonoChrm;$37;$70;$61;u8;ArUrSr;;0;127;;%d;Kernel;35
+MonoChrm;$37;$9;$62;u32;ArUrSr;;200101;401231;;%dyymmdd;Kernel Rev. Date;210512
+MonoChrm;$37;$71;$62;u16;ArUrSr;;0;65535;;%xHex;Softw. file;700
+MonoChrm;$37;$72;$62;u16;ArUrSr;;0;65535;;%xHex;Hardw. file;103
+MonoChrm;$37;$73;$64;u8;ArUrSr;;1;16;;%d;PCB;3
+SM5-SF  ;$39;$FF;$0;;;;;;;;;
+SM5-SF  ;$39;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-SF  ;$39;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;1000
+SM5-SF  ;$39;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;1000
+SM5-SF  ;$39;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-SF  ;$39;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-SF  ;$39;$FF;$10;;;;;;;;Motor Setup;
+SM5-SF  ;$39;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-SF  ;$39;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-SF  ;$39;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;6000
+SM5-SF  ;$39;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;3000
+SM5-SF  ;$39;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;500
+SM5-SF  ;$39;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.30
+SM5-SF  ;$39;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-SF  ;$39;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-SF  ;$39;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-SF  ;$39;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-SF  ;$39;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-SF  ;$39;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-SF  ;$39;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-SF  ;$39;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-SF  ;$39;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-V   ;$3A;$FF;$0;;;;;;;;;
+SM5-V   ;$3A;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-V   ;$3A;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;1000
+SM5-V   ;$3A;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;1000
+SM5-V   ;$3A;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-V   ;$3A;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-V   ;$3A;$FF;$10;;;;;;;;Motor Setup;
+SM5-V   ;$3A;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-V   ;$3A;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-V   ;$3A;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;6000
+SM5-V   ;$3A;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;3000
+SM5-V   ;$3A;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;4000
+SM5-V   ;$3A;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.30
+SM5-V   ;$3A;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-V   ;$3A;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-V   ;$3A;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-V   ;$3A;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-V   ;$3A;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-V   ;$3A;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-V   ;$3A;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-V   ;$3A;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;---
+SM5-V   ;$3A;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+SM5-HW2 ;$3B;$FF;$0;;;;;;;;;
+SM5-HW2 ;$3B;$10;$0;u8;AUS;NV;0;1;Mode0;[POSITIONING,VELOCITY];Mode;POSITIONING
+SM5-HW2 ;$3B;$11;$1;s32;AUS;NV;-2147483648;2147483647;TrgPos0;%d;Target position;0
+SM5-HW2 ;$3B;$12;$2;s32;ArUrSr;;-2147483648;2147483647;CurPos0;%d;Current position;0
+SM5-HW2 ;$3B;$13;$3;s16;AUS;NV;-20000;20000;v_target;%dHz;Target speed (velocity mode);0
+SM5-HW2 ;$3B;$14;$4;u8;AUS;;0;2;status0;[IDLE,RUNNING,TO_HOME,FAILURE];Status;IDLE
+SM5-HW2 ;$3B;$FF;$10;;;;;;;;Motor Setup;
+SM5-HW2 ;$3B;$1F;$11;u8;AUrS;NV;0;3;usrs0;[1/1,1/2,1/4,1/8];Microstep resolution;1/8
+SM5-HW2 ;$3B;$21;$13;u8;AS;NV;0;1;SR;[Disable,Enable];Synchronous rectification;Enable
+SM5-HW2 ;$3B;$20;$12;u16;AUrS;NV;1;20000;v_maxph0;%uHz;Maximum motor velocity;6000
+SM5-HW2 ;$3B;$22;$14;u16;AUrS;NV;1;20000;v_min;%uHz;Minimum motor velocity;3000
+SM5-HW2 ;$3B;$23;$15;u16;AUrS;NV;0;5000;a_max;%uHz/s;Acceleration;5000
+SM5-HW2 ;$3B;$28;$1A;u8;AUrS;NV;0;250;current0;%.2fA;Winding chopping current;0.30
+SM5-HW2 ;$3B;$2A;$1C;u8;AUrS;NV;0;5;ref_conf0;[NONE,LEFT,RIGHT,LEFT or RIGHT,HOME,HOME or RIGHT];Stop on refswitches;NONE
+SM5-HW2 ;$3B;$2B;$1D;u8;AUrS;NV;0;7;ref_pol0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Invert reference switches;---
+SM5-HW2 ;$3B;$2C;$1E;u8;AUrS;NV;0;1;stop_mode0;[ABRUPT,SOFT];Mode of stopping on refswitches;SOFT
+SM5-HW2 ;$3B;$2D;$1F;u8;AUrS;NV;0;6;homingm0;[DISABLED,Hm 1->0,Hm 0->1,Hm 1->0  Lf 1->0,Hm 1->0  Lf 0->1,Lf 1->0,Lf 0->1];Reference search mode;Hm 0->1
+SM5-HW2 ;$3B;$65;$1F;u32;AUrS;NV;1000000;1073741823;HSearchDist;%u;Reference search distance, steps;1000000
+SM5-HW2 ;$3B;$60;$1F;u8;AUS;NV;0;1;SPwr;[OFF,ON];Reference sensors power;ON
+SM5-HW2 ;$3B;$63;$1F;u8;AUS;NV;0;3;SPwrAutoOff;[home found,home,left,right];Reference sensors power auto off on;home found
+SM5-HW2 ;$3B;$64;$68;u8;ArUrSr;;0;7;switches0;[---,H--,-L-,HL-,--R,H-R,-LR,HLR];Active switches;H--
+SM5-HW2 ;$3B;$9;$F;u32;ArUrSr;;0;4294967295;Version;%06u;Firmware SM5;201202
+__license:728c96f8013d1cade4e4a55ba68e1b36
