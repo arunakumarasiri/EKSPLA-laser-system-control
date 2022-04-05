@@ -107,7 +107,7 @@ def errcheck(result: int, func, arguments: tuple):
     if result == RmtCtrlError.NOT_YET_CONNECTED:
         raise ConnectionError("Not connected")
     if result == RmtCtrlError.LOG_OVERFLOW:
-        warn("Log FIFO buffer overflow", stacklevel=2)  # XXX
+        warn("Log FIFO buffer overflow", stacklevel=2)
         return
 
     raise Exception(f"Unknown return code: 0x{result:x}")
