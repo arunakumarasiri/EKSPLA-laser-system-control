@@ -1,4 +1,3 @@
-from ctypes import c_int
 from enum import IntEnum
 from warnings import warn
 
@@ -64,37 +63,38 @@ def errcheck(result: int, func, arguments: tuple):
     if result == RmtCtrlError.WRONG_CONFIG_FILE:
         raise CsvError("Failed to parse REMOTECONTROL.csv")
     if result == RmtCtrlError.BUFFER_TOO_SHORT:
-        max_len = next(arg.value for arg in arguments if isinstance(arg, c_int))
+        max_len = next(arg for arg in arguments if isinstance(arg, int))
         raise BufferError(f"Supplied buffer is too small ({max_len} bytes)")
     if result == RmtCtrlError.NO_SUCH_DEVICE:
-        dev_name: str = arguments[0].value.decode("latin-1")
+        dev_name: str = arguments[0].decode("latin-1")
         raise ValueError(f'Invalid device name: "{dev_name}"')
     if result == RmtCtrlError.NO_SUCH_REGISTER:
-        reg_name: str = arguments[1].value.decode("latin-1")
+        reg_name: str = arguments[1].decode("latin-1")
         raise ValueError(f'Invalid register name: "{reg_name}"')
     if result == RmtCtrlError.CANNOT_CONNECT:
         # Not due to a missing CAN driver DLL since we check for them
-        if arguments[0].value == 1:  # RS-232
-            port_num: int = arguments[1].value
+        con_type: int = arguments[0]
+        if con_type == 1:  # RS-232
+            port_num: int = arguments[1]
             raise ConnectionError(
                 f"COM port {port_num} is already used by another process"
             )
         raise ConnectionError("Already used by another process")  # XXX LAN
     if result == RmtCtrlError.TIMEOUT:
-        timeout: int = arguments[-2].value
+        timeout: int = arguments[-2]
         raise TimeoutError(f"Timed out waiting for device answer ({timeout} ms)")
     if result == RmtCtrlError.READ_ONLY:
         raise RegisterError("Register is read-only")
     if result == RmtCtrlError.NOT_NONVOLATILE:
         raise RegisterError("Register is not non-volatile")
     if result == RmtCtrlError.HIGH_LIMIT:
-        value = _format_value(arguments[2].value)
+        value = _format_value(arguments[2])
         raise ValueError(f"Value ({value}) greater than the maximum value")
     if result == RmtCtrlError.LOW_LIMIT:
-        value = _format_value(arguments[2].value)
+        value = _format_value(arguments[2])
         raise ValueError(f"Value ({value}) less than the minimum value")
     if result == RmtCtrlError.NO_SUCH_VALUE:
-        value = _format_value(arguments[2].value)
+        value = _format_value(arguments[2])
         raise ValueError(f"Value ({value}) not in the value list")
     if result == RmtCtrlError.NOT_LOGGED:
         raise RegisterLogError("Register is not being logged")
@@ -107,7 +107,7 @@ def errcheck(result: int, func, arguments: tuple):
     if result == RmtCtrlError.NOT_YET_CONNECTED:
         raise ConnectionError("Not connected")
     if result == RmtCtrlError.LOG_OVERFLOW:
-        warn("Log FIFO buffer overflow", stacklevel=2)
+        warn("Log FIFO buffer overflow", stacklevel=2)  # XXX
         return
 
     raise Exception(f"Unknown return code: 0x{result:x}")
