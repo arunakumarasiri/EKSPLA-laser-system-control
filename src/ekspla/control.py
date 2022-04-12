@@ -249,7 +249,7 @@ class RemoteControl:
                 if nonvolatile
                 else self._lib.rcSetRegFromString
             )
-            fn(device, register, value)
+            fn(device, register, value.encode("latin-1"))
             return
 
         fn = (
